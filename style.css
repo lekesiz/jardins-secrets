@@ -1,0 +1,150 @@
+/*
+Theme Name: Jardins Secrets Child
+Theme URI: https://jardins-secrets.fr
+Description: Thème enfant Spectra One pour Jardins Secrets — Paysagiste conseil
+Author: Mikail Lekesiz
+Author URI: https://netzinformatique.fr
+Template: flavor
+Version: 1.0.0
+License: GNU General Public License v2 or later
+Text Domain: jardins-secrets-child
+*/
+
+/* Import parent theme */
+@import url("../flavor/style.css");
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;600;700&display=swap');
+
+/* === Variables === */
+:root {
+  --js-green: #2d5016;
+  --js-green-light: #4a7c29;
+  --js-green-lighter: #6b9e3a;
+  --js-brown: #8B6914;
+  --js-brown-light: #a88a3d;
+  --js-cream: #F5F0E8;
+  --js-white: #FFFFFF;
+  --js-dark: #1a1a1a;
+  --js-gray: #666666;
+  --js-font-heading: 'Playfair Display', Georgia, serif;
+  --js-font-body: 'Open Sans', Arial, sans-serif;
+  --js-radius: 12px;
+  --js-shadow: 0 4px 20px rgba(45, 80, 22, 0.1);
+  --js-transition: all 0.3s ease;
+}
+
+/* === Base === */
+body {
+  font-family: var(--js-font-body);
+  color: var(--js-dark);
+  line-height: 1.7;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--js-font-heading);
+  color: var(--js-green);
+}
+a { color: var(--js-green); transition: var(--js-transition); }
+a:hover { color: var(--js-green-light); }
+
+/* === Hero Section === */
+.js-hero {
+  background: linear-gradient(135deg, var(--js-green) 0%, var(--js-green-light) 100%);
+  color: var(--js-white);
+  padding: 100px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.js-hero h1 { font-size: 3.2rem; color: var(--js-white); margin-bottom: 20px; }
+.js-hero p { font-size: 1.3rem; opacity: 0.9; max-width: 700px; margin: 0 auto 30px; }
+
+/* === Buttons === */
+.js-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: var(--js-radius);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--js-transition);
+  cursor: pointer;
+}
+.js-btn-primary {
+  background: var(--js-green);
+  color: var(--js-white);
+  border: 2px solid var(--js-green);
+}
+.js-btn-primary:hover {
+  background: var(--js-green-light);
+  border-color: var(--js-green-light);
+  transform: translateY(-2px);
+  box-shadow: var(--js-shadow);
+}
+.js-btn-secondary {
+  background: transparent;
+  color: var(--js-white);
+  border: 2px solid var(--js-white);
+}
+.js-btn-secondary:hover {
+  background: var(--js-white);
+  color: var(--js-green);
+}
+
+/* === Cards === */
+.js-card {
+  background: var(--js-white);
+  border-radius: var(--js-radius);
+  padding: 30px;
+  box-shadow: var(--js-shadow);
+  transition: var(--js-transition);
+}
+.js-card:hover { transform: translateY(-5px); box-shadow: 0 8px 30px rgba(45,80,22,0.15); }
+.js-card h3 { color: var(--js-green); margin-bottom: 15px; }
+
+/* === Services Grid === */
+.js-services { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; padding: 60px 40px; }
+
+/* === Témoignages === */
+.js-testimonial {
+  background: var(--js-cream);
+  border-left: 4px solid var(--js-green);
+  padding: 25px 30px;
+  border-radius: 0 var(--js-radius) var(--js-radius) 0;
+  margin: 20px 0;
+  font-style: italic;
+}
+.js-testimonial cite { display: block; margin-top: 10px; font-style: normal; font-weight: 600; color: var(--js-green); }
+
+/* === FAQ === */
+.js-faq-item { border-bottom: 1px solid #e0e0e0; padding: 15px 0; }
+.js-faq-question { font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+.js-faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; padding: 0; }
+.js-faq-item.active .js-faq-answer { max-height: 500px; padding-top: 10px; }
+
+/* === Section Styles === */
+.js-section { padding: 80px 40px; }
+.js-section-alt { background: var(--js-cream); }
+.js-section-title { text-align: center; margin-bottom: 50px; }
+.js-section-title h2 { font-size: 2.4rem; color: var(--js-green); }
+.js-section-title p { color: var(--js-gray); font-size: 1.1rem; max-width: 600px; margin: 10px auto 0; }
+
+/* === Footer === */
+.js-footer {
+  background: var(--js-green);
+  color: var(--js-white);
+  padding: 60px 40px 30px;
+}
+.js-footer a { color: var(--js-cream); }
+.js-footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .js-hero h1 { font-size: 2rem; }
+  .js-hero { padding: 60px 20px; }
+  .js-services { grid-template-columns: 1fr; }
+  .js-footer-grid { grid-template-columns: 1fr 1fr; }
+  .js-section { padding: 40px 20px; }
+}
+@media (max-width: 480px) {
+  .js-footer-grid { grid-template-columns: 1fr; }
+}
